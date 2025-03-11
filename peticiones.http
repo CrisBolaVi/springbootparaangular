@@ -1,0 +1,82 @@
+GET http://localhost:8080/webapi/libros
+
+
+#######
+
+GET http://localhost:8080/webapi/libros?titulo=el camino perfecto
+
+#######
+
+GET http://localhost:8080/webapi/libros?autor=juan
+
+#######
+
+POST http://localhost:8080/webapi/libros
+content-type: application/json
+
+{
+    "isbn": "1144C",
+    "titulo": "java web",
+    "autor":"Juan",
+    "paginas":125
+}
+######
+DELETE http://localhost:8080/webapi/libros/1144C
+
+#######
+
+POST http://localhost:8080/webapi/libros
+content-type: application/json
+
+{
+    "isbn": "1144C",
+    "titulo": "java web",
+    "autor":"Juan",
+    "paginas":125
+}
+
+######
+
+GET http://localhost:8080/webapi/libros/1133B
+
+#######
+GET http://localhost:8080/webapi/ejemplar
+
+
+#######
+POST http://localhost:8080/webapi/ejemplar
+content-type: application/json
+
+{
+    "isbn": "HH77B",
+    "numero": "6",
+    "disponible": "true"
+}
+######
+DELETE http://localhost:8080/webapi/ejemplar/HH77B
+
+#######
+
+GET http://localhost:8080/webapi/ejemplar/isbn/GG44A/numero/5
+
+#######
+POST http://localhost:8080/webapi/ejemplar
+content-type: application/json
+
+{
+    "isbn": "HH77B",
+    "numero": "6",
+    "disponible": "true"
+}
+######
+POST http://localhost:8080/webapi/ejemplar
+content-type: application/json
+
+{
+    "isbn": "JJ66B",
+    "numero": "2",
+    "disponible": "false"
+}
+######
+
+
