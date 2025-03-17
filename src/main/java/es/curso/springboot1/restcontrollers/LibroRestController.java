@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.curso.springboot1.negocio.Libro;
 import es.curso.springboot1.repositories.LibroRepository;
+import es.curso.springboot1.repositories.PageResponse;
 
 @RestController
 @RequestMapping("/webapi/libros")
@@ -36,9 +37,10 @@ public class LibroRestController {
         libroRepository.insertar(libro);
     }
 
-    @DeleteMapping("/{isbn}")
-    public void borrar(@PathVariable String isbn) {
-        libroRepository.borrar(new Libro(isbn));
+    @DeleteMapping("/libros/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public void borrarLibro(@PathVariable String id) {
+        libroRepository.borrar(id);
     }
 
     @GetMapping(params = { "titulo" })
@@ -57,5 +59,11 @@ public class LibroRestController {
     @CrossOrigin(origins = "http://localhost:4200")
     public Libro buscarUno(@PathVariable String isbn) {
         return libroRepository.buscarUno(isbn);
+    }
+
+      @GetMapping("/paginado")
+      public PageResponse<Libro> obtenerOrdenadoresPaginado(@RequestParam(defaultValue = "0") int page,
+                                                               @RequestParam(defaultValue = "5") int size) {
+        return libroRepository.buscarPaginado(page, size);
     }
 }

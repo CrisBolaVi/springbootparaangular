@@ -2,27 +2,27 @@ package es.curso.springboot1.negocio;
 
 public class Libro {
 
-    private String isbn;
+    private String id;
     private String titulo;
     private String autor;
     private int paginas;
     
-    public Libro(String isbn, String titulo, String autor, int paginas) {
-        this.isbn = isbn;
+    public Libro(String id, String titulo, String autor, int paginas) {
+        this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.paginas = paginas;
     }
-    public Libro(String isbn) {
-        this.isbn = isbn;
+    public Libro(String id) {
+        this.id = id;
     }
     public Libro() {
     }
-    public String getIsbn() {
-        return isbn;
+    public String getid() {
+        return id;
     }
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void setid(String id) {
+        this.id = id;
     }
     public String getTitulo() {
         return titulo;

@@ -15,10 +15,10 @@ POST http://localhost:8080/webapi/libros
 content-type: application/json
 
 {
-    "isbn": "1144C",
-    "titulo": "java web",
-    "autor":"Juan",
-    "paginas":125
+    "isbn": "SSSS09",
+    "titulo": "lA NIÑA BONITA",
+    "autor":"Salomé S",
+    "paginas":500
 }
 ######
 DELETE http://localhost:8080/webapi/libros/1144C
@@ -38,4 +38,7 @@ content-type: application/json
 ######
 
 GET http://localhost:8080/webapi/libros/A123
+
+######
+GET http://localhost:8080/webapi/libros/paginado
 

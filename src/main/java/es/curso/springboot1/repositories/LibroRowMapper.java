@@ -10,7 +10,7 @@ public class LibroRowMapper implements RowMapper<Libro> {
 
     @Override
     public Libro mapRow(ResultSet rs, int rowNum) throws SQLException {      
-         return new Libro(rs.getString("isbn"),
+         return new Libro(rs.getString("id"),
         rs.getString("titulo"),
         rs.getString("autor"),
         rs.getInt("paginas"));
